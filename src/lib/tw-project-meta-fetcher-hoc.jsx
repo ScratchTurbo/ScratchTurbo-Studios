@@ -6,9 +6,9 @@ import log from './log';
 import { setProjectTitle } from '../reducers/project-title';
 import { setAuthor, setDescription, setExtraProjectInfo, setRemixedProjectInfo } from '../reducers/tw';
 
-const API_URL = 'https://snailshare.dreamhosters.com/api/projects/getPublished?id=$id';
-const API_REMIX_URL = 'https://snailshare.dreamhosters.com/api/pmWrapper/remixes?id=$id';
-const LOL = 'https://editor.snail-ide.com/lol.json';
+const API_URL = 'https://mainapi-scratchturbo.replit.app/api/projects/getPublished?id=$id';
+const API_REMIX_URL = 'https://mainapi-scratchturbo.replit.app/api/pmWrapper/remixes?id=$id';
+const LOL = 'https://studios-scratchturbo.replit.app/lol.json';
 
 function APIProjectToReadableProject(apiProject) {
     return {

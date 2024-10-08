@@ -300,11 +300,11 @@ StudioView.prototype.onselect = function (id, el) { };
 StudioView.prototype.onpageload = function () { };
 StudioView.prototype.onend = function () { };
 
-StudioView.STUDIO_API = 'https://snailshare.dreamhosters.com/api';
+StudioView.STUDIO_API = 'https://mainapi-scratchturbo.replit.app/api';
 
 // The URL to download thumbnails from.
 // $id is replaced with the project's ID.
-StudioView.THUMBNAIL_SRC = 'https://snailshare.dreamhosters.com/api/pmWrapper/iconUrl?id=$id';
+StudioView.THUMBNAIL_SRC = 'https://mainapi-scratchturbo.replit.app/api/pmWrapper/iconUrl?id=$id';
 
 // The URL for project pages.
 // $id is replaced with the project ID.

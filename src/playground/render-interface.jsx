@@ -103,7 +103,7 @@ const getProjectDetailsById = async (id) => {
     // if we have already gotten the details of this project, avoid making another request since they likely never changed
     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
-    const response = await fetch(`https://snailshare.dreamhosters.com/api/pmWrapper/getProject?id=${id}`);
+    const response = await fetch(`https://mainapi-scratchturbo.replit.app/api/pmWrapper/getProject?id=${id}`);
     // Don't continue if the api never returned 200-299 since we would cache an error as project details
     if (!response.ok) return {};
 
@@ -170,7 +170,7 @@ const Footer = () => (
                             id="tw.footer.parameters"
                         />
                     </a>
-                    <a href="https://docs.snail-ide.com/">
+                    <a href="https://docs.scratchturbo.replit.app/">
                         <FormattedMessage
                             defaultMessage="Documentation"
                             description="Link in footer to additional documentation"
@@ -228,14 +228,14 @@ const Footer = () => (
                             id="si.scratch-forum-topic"
                         />
                     </a>
-                    <a href="https://www.snail-ide.com/forum">
+                    <a href="https://www.scratchturbo.replit.app/forum">
                         <FormattedMessage
                             defaultMessage="Unoffical Forum"
                             description="Link to the unoffical internet forum for Snail IDE"
                             id="si.unofficial-forum"
                         />
                     </a>
-                    <a href="https://snail-ide.com">
+                    <a href="https://scratchturbo.replit.app">
                         <FormattedMessage
                             defaultMessage="Homepage"
                             description="Link to homepage"
@@ -256,7 +256,7 @@ class Interface extends React.Component {
             loginData: {}
         }
         window.addEventListener('message', (event) => {
-            if (event.origin !== 'https://www.snail-ide.com') return;
+            if (event.origin !== 'https://www.scratchturbo.replit.app') return;
                this.setState({ loginData: event.data });
                console.log(event.data);
             }
@@ -301,7 +301,7 @@ class Interface extends React.Component {
                 <iframe
                     id='login'
                     style={{ display: 'none' }}
-                    src={`https://www.snail-ide.com/embed/editor?external=${window.location}`}
+                    src={`https://www.scratchturbo.replit.app/embed/editor?external=${window.location}`}
                 ></iframe>
                 {isHomepage ? (
                     <div className={styles.menu}>
@@ -362,8 +362,8 @@ class Interface extends React.Component {
                             {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
                                 <div className={styles.unsharedUpdate}>
                                     <div style={{ display: "flex", flexDirection: "row" }}>
-                                        <a style={{ height: "32px" }} target="_blank" href={"https://snail-ide.com/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://snailshare.dreamhosters.com/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
-                                        <p>Thanks to <b><a target="_blank" href={"https://snail-ide.com/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
+                                        <a style={{ height: "32px" }} target="_blank" href={"https://scratchturbo.replit.app/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://mainapi-scratchturbo.replit.app/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
+                                        <p>Thanks to <b><a target="_blank" href={"https://scratchturbo.replit.app/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
                                     </div>
                                     <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
                                 </div>
@@ -410,7 +410,7 @@ class Interface extends React.Component {
                                 </div>
                             ) : null}
                             {((window.LastFetchedProject) != null) ? (
-                                <a target="_blank" href={"https://snail-ide.com/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
+                                <a target="_blank" href={"https://scratchturbo.replit.app/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
                             ) : null}
                             <div className={styles.section}>
                                 <p>
@@ -428,7 +428,7 @@ class Interface extends React.Component {
                                         <a
                                             target="_blank"
                                             rel="noreferrer"
-                                            href={`https://snail-ide.com/report?type=project&id=${projectId}`}
+                                            href={`https://scratchturbo.replit.app/report?type=project&id=${projectId}`}
                                             className={styles.reportLink}
                                         >
                                             <img
@@ -446,7 +446,7 @@ class Interface extends React.Component {
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
-                            <a target="_blank" href="https://snail-ide.com/search?q=all:projects">View projects in new tab</a>
+                            <a target="_blank" href="https://scratchturbo.replit.app/search?q=all:projects">View projects in new tab</a>
                         </React.Fragment>
                     ) : null}
                 </div>
