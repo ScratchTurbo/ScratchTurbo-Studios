@@ -499,7 +499,7 @@ const menuItems = [
     {
         name: 'ScratchTurbo API',
         extensionId: 'https://extensions-scratchturbo.replit.app/extensions/ScratchTurboOfficial/scratchturboapi.js',
-        iconURL: 'https://extensions.penguinmod.com/images/SharkPool/Tile-Grids.svg',
+        iconURL: 'https://raw.githubusercontent.com/ScratchTurbo/ScratchTurbo-ObjectLibraries/refs/heads/main/files/ScratchTurboAPI.png',
         tags: ['scratchturbo'],
         description: 'Fetch ScratchTurbo API to ScratchTurbo Project.',
         extDeveloper: 'ScratchTurboOfficial',
@@ -1452,7 +1452,17 @@ const menuItems = [
         tags: ['library'],
         featured: true
     },
-    
+    {
+        // not really an extension, but it's easiest to present it as one
+        name: 'STBuilder LTE',
+        href: 'https://scratchturbo.github.io/ST-Builder-LTE/editor/',
+        extensionId: 'special_stbuilderlte',
+        iconURL: "https://raw.githubusercontent.com/ScratchTurbo/ScratchTurbo-ObjectLibraries/refs/heads/main/files/STBuilderLTE.png",
+        description: 'Create your own amazing extensions using the Legacy Version of STBuilder',
+        credits: 'ScratchTurbo Official',
+        tags: ['extcreate', 'scratchturbo'],
+        featured: true
+    },
     {
         // not really an extension, but it's easiest to present it as one
         name: 'PenguinBuilder',
