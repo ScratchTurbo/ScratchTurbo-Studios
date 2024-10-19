@@ -1,0 +1,16 @@
+modules = ["nodejs-20", "web", "bash"]
+run = "npm start"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = "npm start"
+deploymentTarget = "cloudrun"
+
+[env]
+REPLIT_DEPLOYMENT = "1"
+
+[[ports]]
+localPort = 3000
+externalPort = 80

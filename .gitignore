@@ -1,0 +1,26 @@
+# Mac OS
+.DS_Store
+.deploy.js
+
+# NPM
+/node_modules
+npm-*
+
+# Testing
+/.nyc_output
+/coverage
+
+# Build
+/.opt-in
+/build/*
+!/build/Note.md
+!/dist/
+
+# Generated translation files
+/translations
+/locale
+src/lib/tw-translations/new-generated-translations.json
+src/lib/tw-translations/merged-translations.json
+
+# Vercel
+.vercel
