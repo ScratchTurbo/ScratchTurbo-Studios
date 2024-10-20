@@ -8,12 +8,12 @@ import {APP_NAME} from '../../lib/brand';
 
 const hosts = [
     {
-        name: 'US East',
-        cloudHost: 'wss://clouddata.turbowarp.org'
+        name: 'Server 1',
+        cloudHost: 'wss://cloudvar1-scratchturbo.replit.app/'
     },
     {
-        name: 'EU',
-        cloudHost: 'wss://clouddata-eu.turbowarp.org',
+        name: 'Server 2',
+        cloudHost: 'wss://cloudvar2-scratchturbo.replit.app/',
         provider: {
             name: '9gr',
             href: 'https://scratch.mit.edu/users/9gr/'
