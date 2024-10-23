@@ -4,7 +4,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setUsername, setUsernameInvalid, setUsernameLoggedIn} from '../reducers/tw';
 
-let origin = "https://penguinmod.com";
+let origin = "https:/scratchturbo.replit.app";
 // origin = 'http://localhost:5173';
 
 class HomeCommunication extends React.Component {

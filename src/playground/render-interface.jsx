@@ -120,19 +120,19 @@ if (AddonChannels.changeChannel) {
 runAddons();
 
 /* todo: fix this and make it work properly */
-// const projectDetailCache = {};
-// const getProjectDetailsById = async (id) => {
+ const projectDetailCache = {};
+ const getProjectDetailsById = async (id) => {
 //     // if we have already gotten the details of this project, avoid making another request since they likely never changed
-//     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
+     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
-//     const response = await fetch(`https://projects.mubi.tech/api/projects/getPublished?id=${id}`);
+     const response = await fetch(`https://mainapi-scratchturbo.replit.app/api/projects/getPublished?id=${id}`);
 //     // Don't continue if the api never returned 200-299 since we would cache an error as project details
-//     if (!response.ok) return {};
+     if (!response.ok) return {};
 
-//     const project = await response.json();
-//     projectDetailCache[String(id)] = project;
-//     return projectDetailCache[String(id)];
-// };
+     const project = await response.json();
+     projectDetailCache[String(id)] = project;
+     return projectDetailCache[String(id)];
+ };
 
 const Footer = () => (
     <footer className={styles.footer}>
@@ -419,6 +419,12 @@ class Interface extends React.Component {
                             {isBrowserSupported() ? null : (
                                 <BrowserModal isRtl={isRtl} />
                             )}
+                            {extraProjectInfo.author && (
+                                <VoteFrame
+                                    id={projectId}
+                                    darkmode={this.props.isDark}
+                                />
+                            )}
                             {hasCloudVariables && projectId !== '0' && (
                                 <div className={styles.section}>
                                     <CloudVariableBadge />
@@ -433,12 +439,7 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            {extraProjectInfo.author && (
-                                <VoteFrame
-                                    id={projectId}
-                                    darkmode={this.props.isDark}
-                                />
-                            )}
+                            
                             {projectId !== '0' && extraProjectInfo.author && (
                                 <div>
                                     {`${isUpdated ? 'Updated' : 'Uploaded'} ${projectReleaseMonth} ${projectReleaseDay} ${projectReleaseYear} at ${projectReleaseHour}:${projectReleaseMinute < 10 ? '0' : ''}${projectReleaseMinute} ${projectReleaseHalf}`}

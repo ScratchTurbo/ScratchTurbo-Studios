@@ -6,7 +6,7 @@ const showSaveFilePicker = fileName => window.showSaveFilePicker({
         {
             description: 'ScratchTurbo Project',
             accept: {
-                'application/x.scratch.sb3': '.sturbo'
+                'application/x.scratch.sturbo': '.sturbo'
             }
         },
         {

@@ -997,8 +997,19 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <TWSaveStatus />
                     </div>
-                </div>
 
+
+                    <a href={this.props.username ? `https://scratchturbo.replit.app/profile?user=${this.props.username}` : `https://scratchturbo.replit.app/sign-in`}>
+                        <div className={classNames(styles.menuBarItem, styles.hoverable)}>
+                            {this.props.username ? this.props.username : 'Sign in'}
+                        </div>
+                    </a>
+                </div>
+                    
+
+
+                
+                
                 {aboutButton}
             </Box>
         );
