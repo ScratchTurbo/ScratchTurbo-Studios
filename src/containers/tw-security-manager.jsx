@@ -27,6 +27,9 @@ const isTrustedExtension = url => (
     url.startsWith('https://penguinmod-extensions-gallery.vercel.app/') ||
     url.startsWith('https://electramod-extensions-gallery.vercel.app/') ||
     url.startsWith('https://studios-scratchturbo.replit.app/') ||
+    url.startsWith('https://penguinmod-extensions-gallery.vercel.app/') ||
+    url.startsWith('https://raw.githubusercontent.com/SharkPool-SP/') ||
+    
 
     // Trust other people's galleries. These can be removed in the future, they will just show a pop-up on load if they are.
     url.startsWith('https://sharkpools-extensions.vercel.app/') || // SharkPool

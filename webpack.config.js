@@ -203,7 +203,7 @@ module.exports = [
                 chunks: ['addon-settings'],
                 template: 'src/playground/simple.ejs',
                 filename: 'addons.html',
-                title: 'Addon Settings - ElectraMod',
+                title: 'Addon Settings - ScratchTurbo',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({

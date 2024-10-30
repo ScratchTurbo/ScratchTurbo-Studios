@@ -516,11 +516,94 @@ const menuItems = [
     },
     {
         name: 'Scratch Utilities',
-        extensionId: 'https://extensions-scratchturbo.replit.app/extensions/ScratchTurboOfficial/scratch.js',
+        extensionId: 'https://sharkpools-extensions.vercel.app/extension-code/Scratch-Utilities.js',
         iconURL: 'https://sharkpools-extensions.vercel.app/extension-thumbs/Scratch-Utilities.svg',
         tags: ['scratchturbo'],
         description: 'Fetch Scratch API to ScratchTurbo Project.',
         extDeveloper: 'ScratchTurboOfficial',
+        featured: true
+    },
+    {
+        name: 'Youtube Operations',
+        extensionId: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-code/YouTube-Operations.js',
+        iconURL: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-thumbs/YouTube-Operations.svg',
+        tags: ['scratchturbo'],
+        description: 'Fetch Scratch API to ScratchTurbo Project.',
+        extDeveloper: 'ScratchTurboOfficial',
+        featured: true
+    },
+    {
+        name: 'Seeds',
+        extensionId: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-code/Seeds.js',
+        iconURL: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-thumbs/Seeds.svg',
+        tags: ['scratchturbo'],
+        description: 'Generate Seeds, World, and anything',
+        extDeveloper: 'SharkPool',
+        featured: true
+    },
+    {
+        name: 'Randomly Utils',
+        extensionId: 'https://editor.snail-ide.com/randomlyBlocks.js',
+        iconURL: 'https://editor.snail-ide.com/random.png',
+        tags: ['scratchturbo'],
+        description: 'Randomly Utils',
+        extDeveloper: 'ElevadorPro3',
+        featured: true
+    },
+    {
+        name: '3D',
+        extensionId: 'jg3d',
+        iconURL: jg3dExtensionIcon,
+        tags: ['penguinmod', 'scratchturbo', 'graphics'],
+        customInsetColor: '#B200FF',
+        insetIconURL: jg3dInsetExtensionIcon,
+        description: 'Use the magic of 3D to spice up your project.',
+        collaborator: 'PenguinMod',
+        featured: true
+    },
+    {
+        name: '3D VR',
+        extensionId: 'jg3dVr',
+        iconURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJsXcntVmSk264zyLaS3GdbOBQPhk3JjE5Vg&usqp=CAU',
+        tags: ['penguinmod', 'scratchturbo', 'graphics'],
+        description: "Unfinished PenguinMod Extension.",
+        collaborator: "PenguinMod",
+        featured: true
+    },
+    {
+        name: 'Screen Sharing',
+        extensionId: 'https://editor.snail-ide.com/screen-sharing.js',
+        iconURL: 'https://editor.snail-ide.com/Screensharing.png',
+        tags: ['scratchturbo'],
+        description: 'Share your Screen to World',
+        extDeveloper: 'ElevadorPro3',
+        featured: true
+    },
+    {
+        name: 'PerlinNoise',
+        extensionId: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-code/Perlin-Noise.js',
+        iconURL: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-thumbs/Perlin-Noise.svg',
+        tags: ['scratchturbo'],
+        description: 'Generate Seeds, World, and anything',
+        extDeveloper: 'SharkPool',
+        featured: true
+    },
+    {
+        name: '.zip',
+        extensionId: 'https://extensions.turbowarp.org/CST1229/zip.js',
+        iconURL: 'https://extensions.turbowarp.org/images/CST1229/zip.svg',
+        tags: ['scratchturbo'],
+        description: 'Create and edit .zip format files, including .sb3 files.',
+        extDeveloper: 'CST1229',
+        featured: true
+    },
+    {
+        name: 'Files Expanded',
+        extensionId: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-code/Files-Expanded.js',
+        iconURL: 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main/extension-thumbs/Files-Expanded.svg',
+        tags: ['scratchturbo'],
+        description: 'An UPGRADE for Files Extensions',
+        extDeveloper: 'SharkPool',
         featured: true
     },
     {

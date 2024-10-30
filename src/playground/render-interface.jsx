@@ -50,6 +50,7 @@ import restore from './restore.js';
 const urlparams = new URLSearchParams(location.search);
 const restoring = urlparams.get('restore');
 const restoreHandler = urlparams.get('handler');
+import HomeCommunication from './../containers/home-communication.jsx';
 if (String(restoring) === 'true') {
     // console.log(restore)
     restore(restoreHandler);
@@ -264,6 +265,15 @@ class Interface extends React.Component {
     constructor (props) {
         super(props);
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
+        this.state = {
+            loginData: {}
+        }
+        window.addEventListener('message', (event) => {
+            if (event.origin !== 'https://scratchturbo.replit.app') return;
+               this.setState({ loginData: event.data });
+               console.log(event.data);
+            }
+        );
     }
     componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
@@ -279,7 +289,7 @@ class Interface extends React.Component {
     }
     copyProjectLink (id) {
         if ('clipboard' in navigator && 'writeText' in navigator.clipboard) {
-            navigator.clipboard.writeText(`https://mainapi-scratchturbo.replit.app/${id}`);
+            navigator.clipboard.writeText(`https://studios-scratchturbo.replit.app/#${id}`);
         }
     }
     render () {
@@ -318,6 +328,14 @@ class Interface extends React.Component {
                     [styles.editor]: isEditor
                 })}
             >
+                <iframe
+                    id='login'
+                    style={{ display: 'none' }}
+                    src={`https://scratchturbo.replit.app/embed/editor?external=${window.location}`}
+                ></iframe>
+                <HomeCommunication
+                    
+                />
                 {isHomepage ? (
                     <div className={styles.menu}>
                         <WrappedMenuBar
@@ -326,6 +344,7 @@ class Interface extends React.Component {
                             enableSeeInside
                             onClickAddonSettings={handleClickAddonSettings}
                             onClickTheme={onClickTheme}
+                            username={this.state.loginData.packet?.username}
                         />
                     </div>
                 ) : null}
@@ -337,6 +356,7 @@ class Interface extends React.Component {
                     }) : null}
                 >
                     {isHomepage && announcement ? <DOMElementRenderer domElement={announcement} /> : null}
+                    
                     {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
                         <a
                             target="_blank"
@@ -365,6 +385,7 @@ class Interface extends React.Component {
                         onUpdateProjectTitle={this.handleUpdateProjectTitle}
                         backpackVisible
                         backpackHost="_local_"
+                        username={this.state.loginData.packet?.username}
                         {...props}
                     />
                     {isHomepage ? (

@@ -8,6 +8,5 @@ export const tip = [
     'Join the ScratchTurbo revolution and code like never before!',
     'Elevate your scratch coding experience with ScratchTurbo.',
     'With ScratchTurbo, get a new scratch exeprience.',
-    'Try ScratchTurbo Extensions',
-    '', // FurryR is Powerful and SinanShiki too!
+    'Try ScratchTurbo Extensions',  // FurryR is Powerful and SinanShiki too!
 ];
