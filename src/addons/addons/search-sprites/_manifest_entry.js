@@ -22,7 +22,7 @@ const manifest = {
       "url": "userscript.js"
     }
   ],
-  "dynamicDisable": true,
+  "dynamicDisable": false,
   "tags": [],
   "enabledByDefault": true
 };

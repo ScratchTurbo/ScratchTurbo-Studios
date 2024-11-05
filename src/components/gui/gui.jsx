@@ -179,6 +179,7 @@ const GUIComponent = props => {
         customExtensionModalVisible,
         fontsModalVisible,
         isPlayground,
+        username,
         vm,
         ...componentProps
     } = omit(props, 'dispatch');
@@ -500,6 +501,7 @@ const GUIComponent = props => {
                         onShare={onShare}
                         onStartSelectingFileUpload={onStartSelectingFileUpload}
                         onToggleLoginOpen={onToggleLoginOpen}
+                        username={username}
                     />
                 ) : null}
                 <Box className={classNames(styles.bodyWrapper, isPlayground ? styles.bodyWrapperPlayground : null)}>

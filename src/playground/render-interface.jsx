@@ -334,7 +334,7 @@ class Interface extends React.Component {
                     src={`https://scratchturbo.replit.app/embed/editor?external=${window.location}`}
                 ></iframe>
                 <HomeCommunication
-                    
+                    username={this.props.username}
                 />
                 {isHomepage ? (
                     <div className={styles.menu}>

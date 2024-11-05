@@ -133,12 +133,14 @@ class ShareButton extends React.Component {
 
             let remixPiece = '';
             if (location.hash.includes('#')) {
-                const id = location.hash.replace('#', '');
-                remixPiece = `&remix=${id}`;
+                if (!this.props.username == this.props.authorUsername) {
+                    const id = location.hash.replace('#', '');
+                    remixPiece = `&remix=${id}`;
+                }
             }
 
             const url = location.origin;
-            const popup = window.open(`https://scratchturbo.replit.app/upload?name=${this.props.projectTitle} remix${remixPiece}&external=${url}`, '_blank');
+            const popup = window.open(`https://scratchturbo.replit.app/upload?name=${this.props.projectTitle}${remixPiece}&external=${url}`, '_blank');
             const imageUri = this.state.imageUri;
             popup.onload(async () => {
                 popup.postMessage({

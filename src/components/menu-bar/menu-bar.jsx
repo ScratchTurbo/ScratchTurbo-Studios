@@ -8,7 +8,7 @@ import bowser from 'bowser';
 import React from 'react';
 
 import VM from 'scratch-vm';
-
+import HomeCommunication from '../../containers/home-communication.jsx';
 import Box from '../box/box.jsx';
 import Button from '../button/button.jsx';
 import CommunityButton from './community-button.jsx';
@@ -25,6 +25,7 @@ import SB3Downloader from '../../containers/sb3-downloader.jsx';
 import DeletionRestorer from '../../containers/deletion-restorer.jsx';
 import TurboMode from '../../containers/turbo-mode.jsx';
 import MenuBarHOC from '../../containers/menu-bar-hoc.jsx';
+import AccountNav from './account-nav.jsx';
 
 import FramerateChanger from '../../containers/tw-framerate-changer.jsx';
 import ChangeUsername from '../../containers/tw-change-username.jsx';
@@ -193,7 +194,7 @@ const MenuItemLink = props => (
         <MenuItem>{props.children}</MenuItem>
     </a>
 );
-
+const username = null
 MenuItemLink.propTypes = {
     children: PropTypes.node.isRequired,
     href: PropTypes.string.isRequired
@@ -982,34 +983,25 @@ class MenuBar extends React.Component {
                             rel="noopener noreferrer"
                             target="_blank"
                         >
-                            <Button className={styles.feedbackButton}>
-                                <FormattedMessage
-                                    defaultMessage="Back to Home"
-                                    description="Button to go back to the home page"
-                                    id="pm.backToHomeButton"
-                                />
-                            </Button>
+                            
                         </a>
                     </div>
                 </div>
-
                 <div className={styles.accountInfoGroup}>
                     <div className={styles.menuBarItem}>
                         <TWSaveStatus />
                     </div>
-
-
-                    <a href={this.props.username ? `https://scratchturbo.replit.app/profile?user=${this.props.username}` : `https://scratchturbo.replit.app/sign-in`}>
-                        <div className={classNames(styles.menuBarItem, styles.hoverable)}>
-                            {this.props.username ? this.props.username : 'Sign in'}
-                        </div>
-                    </a>
+                    <HomeCommunication
+                        
+                    />
+                    {(this.props.username) ? (
+                        <AccountNav
+                            username={this.props.username}
+                            thumbnailUrl={`https://trampoline.turbowarp.org/avatars/by-username/${this.props.username}`}
+                            profileUrl={`https://scratchturbo.replit.app/profile?user=${this.props.username}`}
+                        />
+                    ) : null}
                 </div>
-                    
-
-
-                
-                
                 {aboutButton}
             </Box>
         );
@@ -1109,7 +1101,6 @@ MenuBar.propTypes = {
     usernameLoggedIn: PropTypes.bool.isRequired,
     vm: PropTypes.instanceOf(VM).isRequired
 };
-
 MenuBar.defaultProps = {
     logo: scratchLogo,
     usernameLoggedIn: false,
@@ -1138,7 +1129,7 @@ const mapStateToProps = (state, ownProps) => {
         projectTitle: state.scratchGui.projectTitle,
         sessionExists: state.session && typeof state.session.session !== 'undefined',
         errorsMenuOpen: errorsMenuOpen(state),
-        username: user ? user.username : null,
+        //username: user ? user.username : null,
         usernameLoggedIn: state.scratchGui.tw.usernameLoggedIn,
         userOwnsProject: ownProps.authorUsername && user &&
             (ownProps.authorUsername === user.username),

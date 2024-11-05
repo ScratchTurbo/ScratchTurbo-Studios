@@ -5,6 +5,7 @@ import {APP_NAME} from '../../brand';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
+import typescriptIcon from './snail-ide/typescript.svg';
 
 import penIconURL from './pen/pen.png';
 import penInsetIconURL from './pen/pen-small.svg';
@@ -503,6 +504,14 @@ const menuItems = [
         tags: ['scratchturbo'],
         description: 'Fetch ScratchTurbo API to ScratchTurbo Project.',
         extDeveloper: 'ScratchTurboOfficial',
+        featured: true
+    },
+    {
+        name: 'TypeScript',
+        extensionId: 'typescratch',
+        iconURL: typescriptIcon,
+        tags: ['penguinmod', 'programminglanguage'],
+        description: "Similar to the JavaScript extension but for TypeScript",
         featured: true
     },
     {

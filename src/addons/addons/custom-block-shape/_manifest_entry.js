@@ -51,7 +51,7 @@ const manifest = {
       "id": "cornerSize",
       "type": "integer",
       "min": 0,
-      "default": 200,
+      "default": 300,
       "max": 300
     },
     {

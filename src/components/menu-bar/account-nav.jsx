@@ -96,13 +96,6 @@ const AccountNavComponent = ({
                     />
                 </MenuItemContainer>
             ) : null}
-            <MenuItemContainer href="/accounts/settings/">
-                <FormattedMessage
-                    defaultMessage="Account settings"
-                    description="Text to link to my account settings, in the account navigation menu"
-                    id="gui.accountMenu.accountSettings"
-                />
-            </MenuItemContainer>
             <MenuSection>
                 <MenuItemContainer onClick={onLogOut}>
                     <FormattedMessage
